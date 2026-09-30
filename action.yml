@@ -1,0 +1,31 @@
+name: OpenAPI Radar
+description: Detect OpenAPI breaking changes and post an idempotent migration report on pull requests.
+author: Andy123211
+inputs:
+  token:
+    description: GitHub token with contents:read and, when comments are enabled, pull-requests:write.
+    required: true
+  base-spec-file:
+    description: OpenAPI document path in the pull request base repository.
+    required: false
+    default: openapi.yaml
+  head-spec-file:
+    description: OpenAPI document path in the pull request head repository.
+    required: false
+    default: openapi.yaml
+  update-comment:
+    description: Create or update this Action's pull request report comment.
+    required: false
+    default: "true"
+  fail-on-breaking:
+    description: Fail the Action after reporting when breaking changes are found.
+    required: false
+    default: "true"
+outputs:
+  total-changes:
+    description: Number of changes reported by openapi-changes.
+  breaking-changes:
+    description: Number of breaking changes reported by openapi-changes.
+runs:
+  using: node24
+  main: dist/index.js
