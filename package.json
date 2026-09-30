@@ -9,6 +9,7 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test test/report.test.cjs test/release.test.cjs",
     "build": "ncc build src/index.ts -o dist --minify"
   },
   "dependencies": {

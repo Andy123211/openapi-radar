@@ -1,0 +1,9 @@
+{
+  "name": "openapi-radar-runtime",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Locked runtime dependency tree for the OpenAPI Radar GitHub Action.",
+  "dependencies": {
+    "@pb33f/openapi-changes": "0.2.11"
+  }
+}
